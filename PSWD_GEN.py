@@ -2,7 +2,7 @@ import random
 
 #This function generate the password.
 def generatePassword(pwlength):
-	#initialise alphavet string.
+	#Initialise all used character in a string variable.
 	alphabet = "abcdefghijklmnopqrstuvwxyz,./;'[]+_)(*&^%$#@!~`1234567890-=ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	#A variable to temporarely store individual password to string.
 	password = "";
@@ -15,21 +15,18 @@ def generatePassword(pwlength):
 		password = password + alphabet[next_letter_index];
 	return password
 
-#main programem funtion
+#Main programem funtion
 def main():
-	#ask the user to input the amount of passwords to generate.
+	#Ask the user to input the amount of passwords to generate.
 	numPasswords = int(input("How many passwords do you want to generate? "));
 
-	#set a limits to the amount of passwords that can be generated.
+	#Set a limits to the amount of passwords that can be generated.
 	if numPasswords<1:
 		print("Minimum amount of password is 1");
 		numPasswords=1;
 	if numPasswords>100:
 		print("Maximum amount of password is 100");
 		numPasswords=100;
-
-	#keep the user inform of the progress
-	print("Generating " +str(numPasswords)+" passwords");
 
 	#set a defautl password length.
 	passwordLengths = 5;
@@ -38,34 +35,35 @@ def main():
 	print("enter 0 for the default 16 character password length");
 
 	#ask the user to input the lenght of each password
-	length = int(input("Enter the length of Password "));
+	passwordLengths = int(input("Enter the length of Password "));
 
 	#set limit to the lenght of each password
-	if length==0:
+	if passwordLengths==0:
     		print("Default length of password is 16");
     		length = 16;
-	if length<5:
+	if passwordLengths<5:
 		print("Minimum length of password is 5");
-		length = 5;
+		passwordLengths = 5;
 
-	if length>200:
+	if passwordLengths>200:
 		print("Maximum length of password is 200");
-		length = 200;
-
-	#update the password length.
-	passwordLengths=length;
-	#generate all password and insert them in the Password array list.
+		passwordLengths = 200;
+	
+	#Keep the user inform of the progress
+	print("Generating " +str(numPasswords)+" passwords of lenght "+str(passwordLengths));
+	
+	#Generate all password and insert them in the Password array list.
 	passwords=[];
 	for i in range(numPasswords):
 		passwords.append(str(generatePassword(passwordLengths)));
 
- 	#if the array contain multiple password loop trough the list.
+ 	#If the array contain multiple password loop trough the list.
 	if numPasswords>1:
 		for i in range(numPasswords):
-			#display all password in the Password list to the user.
+			#Display all password in the Password list to the user.
 			print("Password n."+str(i+1)+" = " + passwords[i]);
 	else:
-		#display the password from the Password list to the user.
+		#Display the password from the Password list to the user.
 		print ("Password"+" = " + passwords[0]);
-#start programme
+#Start programme
 main();
