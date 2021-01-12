@@ -4,8 +4,6 @@ import random
 def generatePassword(pwlength):
 	#initialise alphavet string.
 	alphabet = "abcdefghijklmnopqrstuvwxyz,./;'[]+_)(*&^%$#@!~`1234567890-=ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	#Initialise array list to contain multiple passwords.
-	passwords = [];
 	#A variable to temporarely store individual password to string.
 	password = "";
 
@@ -57,17 +55,17 @@ def main():
 	#update the password length.
 	passwordLengths=length;
 	#generate all password and insert them in the Password array list.
-	Password=[];
+	passwords=[];
 	for i in range(numPasswords):
-		Password.append(str(generatePassword(passwordLengths)));
+		passwords.append(str(generatePassword(passwordLengths)));
 
  	#if the array contain multiple password loop trough the list.
 	if numPasswords>1:
 		for i in range(numPasswords):
 			#display all password in the Password list to the user.
-			print("Password n."+str(i+1)+" = " + Password[i]);
+			print("Password n."+str(i+1)+" = " + passwords[i]);
 	else:
 		#display the password from the Password list to the user.
-		print ("Password"+" = " + Password[0]);
+		print ("Password"+" = " + passwords[0]);
 #start programme
 main();
