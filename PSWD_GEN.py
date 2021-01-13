@@ -28,16 +28,16 @@ def main():
 		print("Maximum amount of password is 100");
 		numPasswords=100;
 
-	#set a defautl password length.
+	#Set a defautl password length.
 	passwordLengths = 5;
 
-	#inform user of the defaut length setting.
-	print("enter 0 for the default 16 character password length");
+	#Inform user of the defaut length setting.
+	print("Enter 0 for the default 16 character password length");
 
-	#ask the user to input the lenght of each password
+	#Ask the user to input the lenght of each password
 	passwordLengths = int(input("Enter the length of Password "));
 
-	#set limit to the lenght of each password
+	#Set limit to the lenght of each password
 	if passwordLengths==0:
     		print("Default length of password is 16");
     		length = 16;
